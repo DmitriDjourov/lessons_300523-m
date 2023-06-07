@@ -72,4 +72,12 @@ h1 {
 
 .container-3 p {
     color: green;
-} 
+}
+
+.social-links a {
+    /* Меняем тип элемента на блочный */
+    /* блочный - block */
+    /* строчный - inline */
+    display: block;
+    width: 50px;
+}
