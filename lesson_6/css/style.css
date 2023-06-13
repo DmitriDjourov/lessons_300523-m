@@ -99,9 +99,11 @@ body {
     /* value by default */
     /* align-items: stretch; */
 
-    align-items: center;
+    /* align-items: center; */
     /* align-items: flex-end; */
-    /* align-items: flex-start; */
+    align-items: flex-start;
 
-    justify-content: center;
+    /* justify-content: center; */
+
+    flex-wrap: wrap;
 }
