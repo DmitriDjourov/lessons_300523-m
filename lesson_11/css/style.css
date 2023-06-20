@@ -117,3 +117,45 @@ header .social_box img:not(:last-child) {
 .our_projects div div article:not(:last-child) {
     margin-right: 37px;
 }
+
+footer {
+    padding: 84px 70px 76px;
+}
+
+footer div h2 {
+    margin-bottom: 55px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+}
+
+footer .contacts_info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    flex-wrap: wrap;
+}
+
+footer .contacts_info div h3 {
+    font-weight: 500;
+    font-size: 24px;
+    color: #999999;
+    margin-bottom: 25px;
+}
+
+footer .contacts_info div {
+    text-align: center;
+    width: 315px;
+}
+
+footer .contacts_info div img {
+    margin-bottom: 36px;
+    width: 50px;
+    height: 50px;
+}
+
+footer .contacts_info div:last-child p {
+    color: #F7654A;
+}
