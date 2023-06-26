@@ -30,33 +30,6 @@
 // console.log(`Product name: ${product.name}`)
 // console.log(`Product price: ${product.price}`)
 
-// Создать массив из объектов продуктов (свойства title, price, type) и, пройдясь циклом по массиву, сформировать строки. Вывести их в консоль.
-const products = [
-    {
-        title: "Macbook",
-        price: 4000,
-        type: "Laptop"
-    },
-    {
-        title: "Blender",
-        price: 1000,
-        type: "Kitchen"
-    },
-    {
-        title: "Bicycle",
-        price: 1500,
-        type: "Sport"
-    }
-]
-
-for(let i = 0; i < products.length; i++) {
-    const {title, price, type} = products[i]
-    console.log(`Title of product: ${title}`)
-    console.log(`Pric of product: ${price}`)
-    console.log(`Type of product: ${type}`)
-    console.log("==================")
-}
-
 // const user = {
 //     'first name': 'John',
 //     lastName: 'Dow',
@@ -73,3 +46,61 @@ for(let i = 0; i < products.length; i++) {
 // const {salary, age, lastName} = user
 // console.log(age)
 // // console.log(active)
+
+// ссылочное храниение
+// arrays
+// const arr = [2, 5, 9]
+// const secondArr = arr
+// secondArr[1] = 10
+// console.log(secondArr) // [2, 10, 9]
+// console.log(arr) // [2, 10, 9]
+// // copy
+// // const arr3 = [...arr] // spread operator
+// // objects
+// const obj = {a: 1, b: 2}
+// const secondObj = obj
+// secondObj.b = 5
+// console.log(secondObj) // {a: 1, b: 5}
+// console.log(obj) // {a: 1, b: 5}
+
+// Создать массив из объектов продуктов (свойства title, price, type) и, пройдясь циклом по массиву, сформировать строки. Вывести их в консоль.
+const products = [
+    {
+        title: "Macbook",
+        price: 4000,
+        type: "Laptop",
+        discount: 13
+    },
+    {
+        title: "Blender",
+        price: 1000,
+        type: "Kitchen",
+        discount: 42
+    },
+    {
+        title: "Bicycle",
+        price: 1500,
+        type: "Sport",
+        discount: 5
+    }
+]
+// Пройдитесь циклом по массиву объектов и найдите общую сумму товаров.
+// Вывести названия товаров и цену со скидкой. В процессе решения задачи используйте деструктурирующее присваивание
+// Создать новый пустой массив. Пройтись циклом по массиву с продуктами и в новый массив добавить те продукты, которые дешевле определенной суммы. (1600)
+let totalPrice = 0
+const newProducts = []
+for(let i = 0; i < products.length; i++) {
+    const {title, price, type, discount} = products[i]
+    console.log(`Title of product: ${title}`)
+    console.log(`Pric of product: ${price}`)
+    console.log(`Type of product: ${type}`)
+    // const priceWithDiscount = price - price * discount / 100
+    console.log(`Price with discount: ${price - price * discount / 100}`)
+    console.log("==================")
+    totalPrice = totalPrice + price
+    if (price < 1600) {
+        newProducts.push(products[i])
+    }
+}
+console.log(`Total price: ${totalPrice}`)
+console.log(newProducts)
