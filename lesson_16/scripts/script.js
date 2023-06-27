@@ -98,9 +98,31 @@ function isEven(a) {
 //     console.log(`Hello ${name}!`)
 // }
 // function expression
-const greet = function(name) {
-    console.log(`Hello ${name}!`)
-    return 5
+// const greet = function(name) {
+//     return `Hello ${name}!`
+// }
+// const num = greet("John")
+// console.log(num)
+
+// methods
+// const user = {
+//     name: "John",
+//     greeting: function(name) {
+//         console.log(`Hello ${name}!`)
+//     }
+// }
+// user.greeting("Mary")
+// user.greeting("Jack")
+
+// var hoisting
+if (1 === 1) {
+    var text = "Hello"
+    console.log(text)
 }
-const num = greet("John")
-console.log(num)
+console.log(text) // "Hello"
+
+console.log(hello) // undefined (not error)
+var hello = "Hello"
+
+var name = "John"
+var name = "Mary"
