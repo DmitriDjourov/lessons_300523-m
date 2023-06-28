@@ -171,3 +171,16 @@ for (let i = 0; i < goods.length; i++) {
 }
 
 // 13 Написать функцию, которая получает в качестве аргумента массив из объектов и возвращает объект с самым дорогим товаром (без учета скидки).
+function getExpensiveProduct(products) {
+    let expProduct = products[0]
+    for (let i = 0; i < products.length; i++) {
+        if(expProduct.price < products[i].price) {
+            expProduct = products[i].price
+        }
+    }
+
+    return expProduct
+}
+
+const result = getExpensiveProduct(goods)
+console.log(result)
