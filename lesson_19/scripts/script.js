@@ -172,7 +172,41 @@ const products = [
     <p>Product title: {title}</p>
     <p>Product price: {unit_price}</p>
     <p>Product count: {count}</p>
-</div> 
+</div>
+
+<div>
+    <p>Total price: price</p>
+    <p>Total count: count</p>
+</div>
 */
 
 // Написать скрипт, который выводит карточки с товарами в интерфейс (на основе массива с объектами. У объекта свойства title, unit_price, count), а внизу выводится итоговая сумма товаров и их количество. 
+
+const productsContainer = document.querySelector(".products_container")
+let totalPrice = 0
+let totalCount = 0
+for (let i = 0; i < products.length; i++) {
+    const {title, unit_price, count} = products[i]
+    const productCard = document.createElement("div")
+
+    const pTitle = document.createElement("p")
+    pTitle.innerText = `Product title: ${title}`
+    const pPrice = document.createElement("p")
+    pPrice.innerText = `Product price: ${unit_price}`
+    const pCount = document.createElement("p")
+    pCount.innerText = `Product count: ${count}`
+
+    productCard.append(pTitle, pPrice, pCount)
+    productsContainer.append(productCard)
+
+    totalPrice = totalPrice + (unit_price * count)
+    totalCount = totalCount + count
+}
+
+const totalStats = document.createElement("div")
+const pTotalPrice = document.createElement("p")
+pTotalPrice.innerText = `Total price: ${totalPrice}`
+const pTotalCount = document.createElement("p")
+pTotalCount.innerText = `Total count: ${totalCount}`
+totalStats.append(pTotalPrice, pTotalCount)
+productsContainer.append(totalStats)
