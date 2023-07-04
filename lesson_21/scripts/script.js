@@ -116,3 +116,32 @@ document.addEventListener("keydown", function(event) {
 // add(function(param) {
 //     console.log(param);
 // })
+
+// Написать программу, которая формирует на основе массива строк множество параграфов и выводит их в интерфейс. При клике на параграф текст должен меняться на звездочки. (*****)
+// const words = ['Lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur', 'adipisicing', 'elit']
+
+// for (let i = 0; i < words.length; i++) {
+//     const pElem = document.createElement("p") // <p></p>
+//     pElem.innerText = words[i] // <p>{words[i]}</p>
+//     document.body.append(pElem)
+//     pElem.addEventListener("click", function () {
+//         pElem.innerText = "***"
+//     })
+// }
+
+// В js объявлен массив с ссылками на картинки. На основе этого массива формируется множество маленьких картинок в верхней части интерфейса. При нажатии на одну из картинок забирается ссылка на эту картинку и в нижней части интерфейса отображается в большем размере. Так, пользователь нажимая на маленькие картинки видит их отображение в большем размере.
+
+const images = ["https://upload.wikimedia.org/wikipedia/commons/8/80/140-P1020281_-_Flickr_-_Laurie_Nature_Bee.jpg", "https://avatars.mds.yandex.net/i?id=ac8f98ab623e6ac9f960456bcfdb7999dd326e2a-9181363-images-thumbs&n=13", "https://images.immediate.co.uk/production/volatile/sites/4/2021/08/mountains-7ddde89.jpg?resize=768,574", "https://where.ru/upload/iblock/ad4/ad4ef7e48f611b6be29e51e9aefaecd1.jpg"]
+const thumbnailsDiv = document.querySelector(".thumbnails")
+const previewImg = document.querySelector(".preview img")
+for (let i = 0; i < images.length; i++) {
+    const imgElem = document.createElement("img") // <img>
+    imgElem.setAttribute("src", images[i]) // <img src="{images[i]}">
+    imgElem.setAttribute("alt", `image_${i}`) // <img src="{images[i]}" alt="image_1">
+    thumbnailsDiv.append(imgElem)
+    imgElem.addEventListener("click", function() {
+        console.log(imgElem.src)
+        previewImg.setAttribute("src", imgElem.src)
+        previewImg.setAttribute("alt", imgElem.alt)
+    })
+}
