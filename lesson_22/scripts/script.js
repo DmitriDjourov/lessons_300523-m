@@ -34,12 +34,12 @@
 // document.body.append(divElem)
 
 // Создать квадратный div и при наведении курсора на него цвет div-а рандомно меняется
-const divElem = document.createElement("div") // <div></div>
-divElem.style.width = "150px" // <div style="width: 150px;"></div>
-divElem.style.height = "150px"
-divElem.style.border = "1px solid black"
-divElem.style.margin = "5px"
-document.body.append(divElem)
+// const divElem = document.createElement("div") // <div></div>
+// divElem.style.width = "150px" // <div style="width: 150px;"></div>
+// divElem.style.height = "150px"
+// divElem.style.border = "1px solid black"
+// divElem.style.margin = "5px"
+// document.body.append(divElem)
 // red green blue
 // #ffffff
 // rgb(255, 100, 250) [0-255]
@@ -63,18 +63,18 @@ document.body.append(divElem)
 // })
 
 // 2 вариант
-function setRandColor() {
-    // console.log("i am here")
-    const red = Math.ceil(Math.random() * 255)
-    const green = Math.ceil(Math.random() * 255)
-    const blue = Math.ceil(Math.random() * 255)
-    console.log(red, green, blue)
-    const backgroundColor = `rgb(${red}, ${green}, ${blue})`
-    console.log(backgroundColor)
-    divElem.style.backgroundColor = backgroundColor
-}
-divElem.addEventListener("mouseover", setRandColor)
-divElem.addEventListener("mouseout", setRandColor)
+// function setRandColor() {
+//     // console.log("i am here")
+//     const red = Math.ceil(Math.random() * 255)
+//     const green = Math.ceil(Math.random() * 255)
+//     const blue = Math.ceil(Math.random() * 255)
+//     console.log(red, green, blue)
+//     const backgroundColor = `rgb(${red}, ${green}, ${blue})`
+//     console.log(backgroundColor)
+//     divElem.style.backgroundColor = backgroundColor
+// }
+// divElem.addEventListener("mouseover", setRandColor)
+// divElem.addEventListener("mouseout", setRandColor)
 
 // Написать цикл, который создает множество div-ов c цветами от rgb(128, 128, 0) до rgb(128, 128, 255). У дивов цвет должен меняться с шагом 5.
 // rgb(128, 128, 0)
@@ -83,3 +83,12 @@ divElem.addEventListener("mouseout", setRandColor)
 // rgb(128, 128, 15)
 // ...
 // rgb(128, 128, 255)
+
+for (let i = 0; i <= 255; i += 5) {
+    const divElem = document.createElement("div")
+    divElem.style.width = "100%"
+    divElem.style.height = "150px"
+    const rgbString = `rgb(128, 128, ${i})`
+    divElem.style.backgroundColor = rgbString
+    document.body.append(divElem)
+}
