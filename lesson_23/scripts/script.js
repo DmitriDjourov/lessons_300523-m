@@ -58,12 +58,16 @@ function createProductCard(name, price) {
 //     price: 4500
 // }
 // 5. Доработать rerender таким образом, чтобы при двойном клике по карточке в консоль выводилось название товар.
+// dblclick
 const productsContainer = document.querySelector(".products_container")
 function rerender() {
     productsContainer.innerHTML = ""
     for (let i = 0; i < products.length; i++) {
         const {name, price} = products[i]
         const productElem = createProductCard(name, price)
+        productElem.addEventListener("dblclick", function () {
+            console.log(name);
+        })
         productsContainer.append(productElem)
     }
 }
